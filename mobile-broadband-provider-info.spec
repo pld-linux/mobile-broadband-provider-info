@@ -46,6 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog NEWS README
+%dir %{_datadir}/%{name}
 %{_datadir}/%{name}/serviceproviders.2.dtd
 %{_datadir}/%{name}/serviceproviders.xml
 
