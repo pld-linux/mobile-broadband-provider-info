@@ -1,0 +1,8 @@
+--- mobile-broadband-provider-info-20100510/mobile-broadband-provider-info.pc.in~	2009-05-13 20:26:08.000000000 +0300
++++ mobile-broadband-provider-info-20100510/mobile-broadband-provider-info.pc.in	2010-07-11 13:25:10.792434688 +0300
+@@ -10,4 +10,4 @@
+ Description: Mobile Broadband Service Provider Information Database
+ Requires:
+ Version: @VERSION@
+-Cflags: -DMOBILE_BROADBAND_PROVIDER_INFO='\"${database}\"'
++Cflags: -DMOBILE_BROADBAND_PROVIDER_INFO=\"${database}\"
