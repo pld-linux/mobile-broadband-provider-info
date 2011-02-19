@@ -1,12 +1,11 @@
 Summary:	Mobile broadband provider database
 Name:		mobile-broadband-provider-info
-Version:	20100510
-Release:	2
+Version:	20110218
+Release:	1
 License:	Public Domain
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/mobile-broadband-provider-info/20100510/%{name}-%{version}.tar.bz2
-# Source0-md5:	43c1fd6b5c70ec911a8136263a1d6ccf
-Patch0:		pkgconfig-quote.patch
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/mobile-broadband-provider-info/20110218/%{name}-%{version}.tar.bz2
+# Source0-md5:	c4f936f6f92573630fba825fccdfdbdd
 URL:		http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -26,7 +25,6 @@ Development files for mobile-broadband-provider-info.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__aclocal}
