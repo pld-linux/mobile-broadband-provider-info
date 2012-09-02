@@ -1,4 +1,5 @@
 Summary:	Mobile broadband provider database
+Summary(pl.UTF-8):	Baza danych dostawców szerokopasmowych łącz komórkowych
 Name:		mobile-broadband-provider-info
 Version:	20120614
 Release:	1
@@ -7,7 +8,7 @@ Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/mobile-broadband-provider-info/20120614/%{name}-%{version}.tar.xz
 # Source0-md5:	dfa66a77ce27071b0882e2f822eecde5
 URL:		http://live.gnome.org/NetworkManager/MobileBroadband/ServiceProviders
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
@@ -18,12 +19,21 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 The mobile-broadband-provider-info package contains listings of mobile
 broadband (3G) providers and associated network and plan information.
 
+%description -l pl.UTF-8
+Pakiet mobile-broadband-provider-info zawiera listę dostawców
+szerokopasmowych (3G) łącz komórkowych oraz związanych z nimi
+informacji o sieciach i planach.
+
 %package devel
 Summary:	Development files for mobile-broadband-provider-info
+Summary(pl.UTF-8):	Pliki programistyczne pakietu mobile-broadband-provider-info
 Group:		Development/Libraries
 
 %description devel
 Development files for mobile-broadband-provider-info.
+
+%description devel -l pl.UTF-8
+Pliki programistyczne pakietu mobile-broadband-provider-info.
 
 %prep
 %setup -q
@@ -46,7 +56,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog NEWS README
+%doc COPYING ChangeLog NEWS README
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/serviceproviders.2.dtd
 %{_datadir}/%{name}/serviceproviders.xml
