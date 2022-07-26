@@ -1,12 +1,12 @@
 Summary:	Mobile broadband provider database
 Summary(pl.UTF-8):	Baza danych dostawców szerokopasmowych łącz komórkowych
 Name:		mobile-broadband-provider-info
-Version:	20220511
+Version:	20220725
 Release:	1
 License:	Public Domain
 Group:		Libraries
 Source0:	https://download.gnome.org/sources/mobile-broadband-provider-info/%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	7af1f0c5dc31730cf334ff4343f162dd
+# Source0-md5:	f283369e5b1d46a77bded8f7754ad3c3
 URL:		https://wiki.gnome.org/Projects/NetworkManager/MobileBroadband/ServiceProviders
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
