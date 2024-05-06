@@ -1,16 +1,17 @@
 Summary:	Mobile broadband provider database
 Summary(pl.UTF-8):	Baza danych dostawców szerokopasmowych łącz komórkowych
 Name:		mobile-broadband-provider-info
-Version:	20230416
+Version:	20240407
 Release:	1
 License:	Public Domain
 Group:		Libraries
 Source0:	https://download.gnome.org/sources/mobile-broadband-provider-info/%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	b872560a147b979834ae0662643f4f42
+# Source0-md5:	4768203b47c8125c82739a41de57b8d8
 URL:		https://wiki.gnome.org/Projects/NetworkManager/MobileBroadband/ServiceProviders
-BuildRequires:	autoconf >= 2.52
-BuildRequires:	automake
+BuildRequires:	meson >= 1.0.0
+BuildRequires:	ninja >= 1.5
 BuildRequires:	libxslt-progs
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 BuildArch:	noarch
@@ -40,24 +41,21 @@ Pliki programistyczne pakietu mobile-broadband-provider-info.
 %setup -q
 
 %build
-%{__aclocal}
-%{__autoconf}
-%{__automake}
-%configure
-%{__make}
+%meson build
+
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING README
+%doc COPYING MAINTAINERS NEWS README
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/apns-conf.xml
 %{_datadir}/%{name}/serviceproviders.2.dtd
